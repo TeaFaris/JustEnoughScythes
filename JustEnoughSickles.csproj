@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>JustEnoughSickles</AssemblyName>
+    <TargetFramework>net6.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="NewContent\Items\Новая папка\**" />
+    <Compile Remove="NewContent\Новая папка\**" />
+    <EmbeddedResource Remove="NewContent\Items\Новая папка\**" />
+    <EmbeddedResource Remove="NewContent\Новая папка\**" />
+    <None Remove="NewContent\Items\Новая папка\**" />
+    <None Remove="NewContent\Новая папка\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="NewContent\Items\Tiles\Altar.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="NewContent\Items\Tiles\NewFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
+</Project>

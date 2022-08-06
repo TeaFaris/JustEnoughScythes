@@ -1,0 +1,3 @@
+displayName = Just Enough Sickles
+author = Faris & Flam3y & Chereshnya
+version = 0.1
