@@ -42,13 +42,10 @@ namespace JustEnoughSickles.Systems
             }
             SoulsContainer.Reset();
         }
-        public override void PreUpdate() => IsBlocking = Player.HeldItem.DamageType.Type == DamageClass.Melee.Type && Main.mouseRight;
         public override void ModifyDrawInfo(ref PlayerDrawSet drawInfo)
         {
             if (IsBlocking)
-            {
                 Main.instance.MouseText("Blocking!!!");
-            }
         }
         public override void SaveData(TagCompound tag)
         {

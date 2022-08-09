@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace JustEnoughSickles.Systems.Items
 {
-    public class GlobalItem : Terraria.ModLoader.GlobalItem
+    public class CustomGlobalItem : GlobalItem
     {
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
