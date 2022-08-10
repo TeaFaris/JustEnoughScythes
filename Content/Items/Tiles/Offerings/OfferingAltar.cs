@@ -24,8 +24,6 @@ namespace JustEnoughScythes.Content.Items.Tiles.Offerings
 			TileID.Sets.HasOutlines[Type] = true;
 			TileID.Sets.DisableSmartCursor[Type] = true;
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-
 			// Names
 			AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.Altar"));
 
@@ -36,7 +34,6 @@ namespace JustEnoughScythes.Content.Items.Tiles.Offerings
 			// The following 3 lines are needed if you decide to add more styles and stack them vertically
 			TileObjectData.newTile.StyleWrapLimit = 2;
 			TileObjectData.newTile.StyleHorizontal = true;
-
 			TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
 			TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
 			TileObjectData.addTile(Type);
