@@ -26,7 +26,6 @@ namespace JustEnoughScythes.Content.Items.Tiles.Upgrade
 			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 			// Placement
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style6x3);
-			TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
 			TileObjectData.newTile.CoordinatePaddingFix = new Point16(0, 2);
 			// The following 3 lines are needed if you decide to add more styles and stack them vertically
 			TileObjectData.newTile.StyleWrapLimit = 2;
