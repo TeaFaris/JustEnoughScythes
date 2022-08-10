@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace JustEnoughSickles.Content.NPCs.Souls.Frost
+namespace JustEnoughScythes.Content.NPCs.Souls.Frost
 {
     public class Frost : SoulMob
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JustEnoughSickles.Utils
+namespace JustEnoughScythes.Utils
 {
     public class Switch<T>
     {

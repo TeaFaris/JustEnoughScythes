@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 
-namespace JustEnoughSickles.Content.Utils
+namespace JustEnoughScythes.Content.Utils
 {
     public static class ReflectionExtentions
     {

@@ -1,4 +1,4 @@
-﻿namespace JustEnoughSickles.Content.Items.Offerings.RottenCookie
+﻿namespace JustEnoughScythes.Content.Items.Offerings.RottenCookie
 {
     public class RottenCookie : Offering
     {

@@ -1,4 +1,4 @@
-﻿namespace JustEnoughSickles.Content.Items.Offerings.SuspiciousLookingChowder
+﻿namespace JustEnoughScythes.Content.Items.Offerings.SuspiciousLookingChowder
 {
     public class SuspiciousLookingChowder : Offering
     {

@@ -1,11 +1,11 @@
-﻿using JustEnoughSickles.Systems.Configs;
+﻿using JustEnoughScythes.Systems.Configs;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace JustEnoughSickles.Content.UI.SoulsUI
+namespace JustEnoughScythes.Content.UI.SoulsUI
 {
     public sealed class UISystem : ModSystem
     {

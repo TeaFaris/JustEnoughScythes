@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace JustEnoughSickles.Systems.Configs
+namespace JustEnoughScythes.Systems.Configs
 {
     public class Config : ModConfig
     {

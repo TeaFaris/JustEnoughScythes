@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 
-namespace JustEnoughSickles.Content.Items.Offerings
+namespace JustEnoughScythes.Content.Items.Offerings
 {
     public abstract class Offering : ModItem
     {

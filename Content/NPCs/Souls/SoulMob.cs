@@ -1,12 +1,12 @@
-﻿using JustEnoughSickles.Systems;
-using JustEnoughSickles.Systems.NPCs;
+﻿using JustEnoughScythes.Systems;
+using JustEnoughScythes.Systems.NPCs;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 
-namespace JustEnoughSickles.Content.NPCs.Souls
+namespace JustEnoughScythes.Content.NPCs.Souls
 {
     public abstract class SoulMob : HandledNPC
     {

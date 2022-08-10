@@ -1,7 +1,7 @@
 ﻿using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
-namespace JustEnoughSickles.Content.Items.Tiles.Offerings
+namespace JustEnoughScythes.Content.Items.Tiles.Offerings
 {
 	public class OfferingAltarItem : ModItem
 	{

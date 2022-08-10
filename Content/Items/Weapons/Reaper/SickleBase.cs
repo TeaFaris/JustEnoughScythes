@@ -1,21 +1,21 @@
-﻿using JustEnoughSickles.Content.Utils;
-using JustEnoughSickles.Systems.NPCs;
-using JustEnoughSickles.Systems.Reaper;
-using JustEnoughSickles.Utils.IDs;
+﻿using JustEnoughScythes.Content.Utils;
+using JustEnoughScythes.Systems.NPCs;
+using JustEnoughScythes.Systems.Reaper;
+using JustEnoughScythes.Utils.IDs;
 using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 
-namespace JustEnoughSickles.Content.Items.Weapons.Reaper
+namespace JustEnoughScythes.Content.Items.Weapons.Reaper
 {
-    public abstract class SickleBase : ModItem
+    public abstract class ScytheBase : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Le Sickle");
-            Tooltip.SetDefault("This is a new content sickle.");
+            DisplayName.SetDefault("Le Scythe");
+            Tooltip.SetDefault("This is a new content Scythe.");
         }
         public override void SetDefaults()
         {

@@ -1,21 +1,21 @@
-﻿using JustEnoughSickles.Content.Items.Materials.Uranium;
-using JustEnoughSickles.Content.Items.Offerings.BeePawsInHoneySauce;
-using JustEnoughSickles.Content.Items.Offerings.ReasonableStew;
-using JustEnoughSickles.Content.Items.Offerings.RottenCookie;
-using JustEnoughSickles.Content.Items.Offerings.RoyalCocktail;
-using JustEnoughSickles.Content.Items.Offerings.SuspiciousLookingChowder;
-using JustEnoughSickles.Content.Items.Weapons.Reaper.CobaltSickle;
-using JustEnoughSickles.Content.Items.Weapons.Reaper.GoldenSickle;
+﻿using JustEnoughScythes.Content.Items.Materials.Uranium;
+using JustEnoughScythes.Content.Items.Offerings.BeePawsInHoneySauce;
+using JustEnoughScythes.Content.Items.Offerings.ReasonableStew;
+using JustEnoughScythes.Content.Items.Offerings.RottenCookie;
+using JustEnoughScythes.Content.Items.Offerings.RoyalCocktail;
+using JustEnoughScythes.Content.Items.Offerings.SuspiciousLookingChowder;
+using JustEnoughScythes.Content.Items.Weapons.Reaper.CobaltScythe;
+using JustEnoughScythes.Content.Items.Weapons.Reaper.GoldenScythe;
 using Terraria.ModLoader;
 
-namespace JustEnoughSickles.Utils.IDs
+namespace JustEnoughScythes.Utils.IDs
 {
     public class JESItemID
     {
-        public class Sickle
+        public class Scythe
         {
-            public static readonly int Coblat = ModContent.ItemType<CobaltSickle>();
-            public static readonly int Golden = ModContent.ItemType<GoldenSickle>();
+            public static readonly int Coblat = ModContent.ItemType<CobaltScythe>();
+            public static readonly int Golden = ModContent.ItemType<GoldenScythe>();
         }
         public class Material
         {

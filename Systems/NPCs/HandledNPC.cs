@@ -2,7 +2,7 @@
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace JustEnoughSickles.Systems.NPCs
+namespace JustEnoughScythes.Systems.NPCs
 {
     public abstract class HandledNPC : ModNPC
     {
@@ -22,8 +22,8 @@ namespace JustEnoughSickles.Systems.NPCs
             {
                 if (Main.netMode == NetmodeID.MultiplayerClient)
                 {
-                    var message = JustEnoughSickles.Instance.GetPacket();
-                    message.Write((byte)CheatSheetMessageType.RequestFilterNPC);
+                    var message = JustEnoughScythes.Instance.GetPacket();
+                    message.Write((byte)PacketMessageType.RequestFilterNPC);
                     message.Write(SyncID);
                     message.Write(!Filtered);
                     message.Send();
@@ -39,8 +39,8 @@ namespace JustEnoughSickles.Systems.NPCs
             }
             else
             {
-                ModPacket NetMessage = JustEnoughSickles.Instance.GetPacket();
-                NetMessage.Write((byte)CheatSheetMessageType.SpawnNPC);
+                ModPacket NetMessage = JustEnoughScythes.Instance.GetPacket();
+                NetMessage.Write((byte)PacketMessageType.SpawnNPC);
                 NetMessage.Write(Type);
                 NetMessage.Write(SyncID);
                 NetMessage.Send();

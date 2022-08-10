@@ -1,6 +1,6 @@
-﻿using JustEnoughSickles.Content.NPCs.Souls;
-using JustEnoughSickles.Systems;
-using JustEnoughSickles.Systems.Configs;
+﻿using JustEnoughScythes.Content.NPCs.Souls;
+using JustEnoughScythes.Systems;
+using JustEnoughScythes.Systems.Configs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
@@ -11,7 +11,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace JustEnoughSickles.Content.UI.SoulsUI
+namespace JustEnoughScythes.Content.UI.SoulsUI
 {
 	public sealed class SoulsUI : UIState
 	{
@@ -20,7 +20,7 @@ namespace JustEnoughSickles.Content.UI.SoulsUI
         {
 			if (SoulCounter != null)
 				SoulCounter.Remove();
-			SoulCounter = new UIImage(ModContent.Request<Texture2D>("JustEnoughSickles/Content/UI/SoulsUI/Assets/UI_Souls"));
+			SoulCounter = new UIImage(ModContent.Request<Texture2D>("JustEnoughScythes/Content/UI/SoulsUI/Assets/UI_Souls"));
 			SoulCounter.Top.Set(0f, ModContent.GetInstance<Config>().UIYPos / 1920f);
 			SoulCounter.Left.Set(0f, ModContent.GetInstance<Config>().UIXPos / 1920f);
 			SoulCounter.Width.Set(30 / Main.PendingResolutionWidth, 0f);
@@ -65,7 +65,7 @@ namespace JustEnoughSickles.Content.UI.SoulsUI
 		public uint SoulsCount => ReaperPlayer.SoulsContainer[Type];
 		public SoulBar(float TopPixel, float LeftPixel, int Player, SoulType Type)
         {
-			Texture = ModContent.Request<Texture2D>($"JustEnoughSickles/Content/UI/SoulsUI/Assets/UI_{Type}_Bar");
+			Texture = ModContent.Request<Texture2D>($"JustEnoughScythes/Content/UI/SoulsUI/Assets/UI_{Type}_Bar");
 			this.Type = Type;
 			this.Player = Player;
 			TopBar = TopPixel + 38f;

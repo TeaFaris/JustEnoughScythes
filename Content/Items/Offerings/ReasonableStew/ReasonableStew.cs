@@ -1,4 +1,4 @@
-﻿namespace JustEnoughSickles.Content.Items.Offerings.ReasonableStew
+﻿namespace JustEnoughScythes.Content.Items.Offerings.ReasonableStew
 {
     public class ReasonableStew : Offering
     {

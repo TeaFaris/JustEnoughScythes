@@ -1,9 +1,9 @@
-﻿using JustEnoughSickles.Content.Items.Offerings;
-using JustEnoughSickles.Content.NPCs.Souls;
-using JustEnoughSickles.Content.Utils;
-using JustEnoughSickles.Systems.NPCs;
-using JustEnoughSickles.Systems.Reaper;
-using JustEnoughSickles.Utils.IDs;
+﻿using JustEnoughScythes.Content.Items.Offerings;
+using JustEnoughScythes.Content.NPCs.Souls;
+using JustEnoughScythes.Content.Utils;
+using JustEnoughScythes.Systems.NPCs;
+using JustEnoughScythes.Systems.Reaper;
+using JustEnoughScythes.Utils.IDs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace JustEnoughSickles.Systems
+namespace JustEnoughScythes.Systems
 {
     public class JESPlayer : ModPlayer, IContainsSouls
     {

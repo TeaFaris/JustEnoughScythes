@@ -1,9 +1,9 @@
-﻿using JustEnoughSickles.Content.NPCs.Souls;
+﻿using JustEnoughScythes.Content.NPCs.Souls;
 using System;
 using Terraria.Audio;
 using Terraria.ID;
 
-namespace JustEnoughSickles.Systems.Reaper
+namespace JustEnoughScythes.Systems.Reaper
 {
     public class SoulContainer
     {

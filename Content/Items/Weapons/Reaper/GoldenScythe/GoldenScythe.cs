@@ -1,14 +1,14 @@
 ﻿using Terraria;
 using Terraria.ID;
 
-namespace JustEnoughSickles.Content.Items.Weapons.Reaper.GoldenSickle
+namespace JustEnoughScythes.Content.Items.Weapons.Reaper.GoldenScythe
 {
-    public class GoldenSickle : SickleBase
+    public class GoldenScythe : ScytheBase
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Golden Sickle");
-            Tooltip.SetDefault("Golden Sickle made from gold.");
+            DisplayName.SetDefault("Golden Scythe");
+            Tooltip.SetDefault("Golden Scythe made from gold.");
         }
 
         public override void SetDefaults()

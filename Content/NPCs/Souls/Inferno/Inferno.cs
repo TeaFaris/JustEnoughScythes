@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace JustEnoughSickles.Content.NPCs.Souls.Inferno
+namespace JustEnoughScythes.Content.NPCs.Souls.Inferno
 {
     public class Inferno : SoulMob
     {

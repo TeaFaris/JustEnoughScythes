@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace JustEnoughSickles.Content.Items.Materials.Uranium
+namespace JustEnoughScythes.Content.Items.Materials.Uranium
 {
     public class Uranium : ModItem
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace JustEnoughSickles.Content.NPCs.Souls.Light
+namespace JustEnoughScythes.Content.NPCs.Souls.Light
 {
     public class Light : SoulMob
     {

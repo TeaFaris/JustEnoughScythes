@@ -9,10 +9,10 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using System.Collections.Generic;
-using JustEnoughSickles.Systems;
-using JustEnoughSickles.Content.Items.Offerings;
+using JustEnoughScythes.Systems;
+using JustEnoughScythes.Content.Items.Offerings;
 
-namespace JustEnoughSickles.Content.Items.Tiles.Offerings
+namespace JustEnoughScythes.Content.Items.Tiles.Offerings
 {
     public class OfferingAltar : ModTile
     {

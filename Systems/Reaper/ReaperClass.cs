@@ -1,6 +1,6 @@
 ﻿using Terraria.ModLoader;
 
-namespace JustEnoughSickles.Systems.Reaper
+namespace JustEnoughScythes.Systems.Reaper
 {
     public class ReaperClass : DamageClass
     {

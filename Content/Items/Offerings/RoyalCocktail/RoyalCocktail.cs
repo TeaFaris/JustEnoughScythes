@@ -1,4 +1,4 @@
-﻿namespace JustEnoughSickles.Content.Items.Offerings.RoyalCocktail
+﻿namespace JustEnoughScythes.Content.Items.Offerings.RoyalCocktail
 {
     public class RoyalCocktail : Offering
     {

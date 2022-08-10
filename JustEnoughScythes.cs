@@ -1,10 +1,10 @@
 using Terraria.ModLoader;
 
-namespace JustEnoughSickles
+namespace JustEnoughScythes
 {
-	public class JustEnoughSickles : Mod
+	public class JustEnoughScythes : Mod
 	{
-        public static JustEnoughSickles Instance;
+        public static JustEnoughScythes Instance { get; set; }
         public override void Load()
         {
             Instance = this;
@@ -13,7 +13,7 @@ namespace JustEnoughSickles
     // Those parts of code not mine
     // Thanks JavidPack for code
     // https://github.com/JavidPack
-    public enum CheatSheetMessageType : byte
+    public enum PacketMessageType : byte
     {
         SpawnNPC,
         QuickClear,

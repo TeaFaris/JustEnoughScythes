@@ -1,10 +1,10 @@
-﻿using JustEnoughSickles.Content.NPCs.Souls.Frost;
-using JustEnoughSickles.Content.NPCs.Souls.Inferno;
-using JustEnoughSickles.Content.NPCs.Souls.Light;
-using JustEnoughSickles.Content.NPCs.Souls.Shadow;
+﻿using JustEnoughScythes.Content.NPCs.Souls.Frost;
+using JustEnoughScythes.Content.NPCs.Souls.Inferno;
+using JustEnoughScythes.Content.NPCs.Souls.Light;
+using JustEnoughScythes.Content.NPCs.Souls.Shadow;
 using Terraria.ModLoader;
 
-namespace JustEnoughSickles.Utils.IDs
+namespace JustEnoughScythes.Utils.IDs
 {
     public class JESNPCID
     {

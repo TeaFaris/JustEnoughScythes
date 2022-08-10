@@ -1,14 +1,14 @@
 ﻿using Terraria;
 using Terraria.ID;
 
-namespace JustEnoughSickles.Content.Items.Weapons.Reaper.CobaltSickle
+namespace JustEnoughScythes.Content.Items.Weapons.Reaper.CobaltScythe
 {
-    public class CobaltSickle : SickleBase
+    public class CobaltScythe : ScytheBase
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cobalt Sickle");
-            Tooltip.SetDefault("Cobalt Sickle made from cobalt.");
+            DisplayName.SetDefault("Cobalt Scythe");
+            Tooltip.SetDefault("Cobalt Scythe made from cobalt.");
         }
 
         public override void SetDefaults()

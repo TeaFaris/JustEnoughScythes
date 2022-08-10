@@ -1,4 +1,4 @@
-﻿namespace JustEnoughSickles.Content.Items.Offerings.BeePawsInHoneySauce
+﻿namespace JustEnoughScythes.Content.Items.Offerings.BeePawsInHoneySauce
 {
     public class BeePawsInHoneySauce : Offering
     {

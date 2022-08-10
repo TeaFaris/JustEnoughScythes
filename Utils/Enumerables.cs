@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JustEnoughSickles.Utils
+namespace JustEnoughScythes.Utils
 {
     public class CycleList<T> : List<T>
     {
