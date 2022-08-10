@@ -54,10 +54,10 @@ namespace JustEnoughScythes.Content.Items.Weapons.Reaper
                 return;
             
             WeightedRandom<int> Rand = new WeightedRandom<int>();
-            foreach (var Soul in ReflectionExtentions.GetIDCategory<JESNPCID>())
+            foreach (var Soul in ReflectionExtentions.GetIDCategory<JESNPCID.Souls>())
                 Rand.Add((int)Soul.GetValue(null));
 
-            ((HandledNPC)HandledNPC.HandledSpawnNPC(Rand.Get(), (int)target.position.X, (int)target.position.Y).ModNPC).SetTarget(player);
+            HandledNPC.HandledSpawnNPC(Rand.Get(), (int)target.position.X, (int)target.position.Y);
         }
     }
 }

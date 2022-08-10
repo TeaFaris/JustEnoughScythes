@@ -41,14 +41,13 @@ namespace JustEnoughScythes.Content.Items.Tiles.Offerings
         public override void MouseOver(int i, int j) => Main.instance.MouseText("Make an offering...");
 		public override bool RightClick(int i, int j)
         {
-			JESPlayer JESPlayer = Main.LocalPlayer.GetModPlayer<JESPlayer>();
-			List<int> Offerings = JESPlayer.Player.inventory.Select((x, i) => x.ModItem is Offering ? i : -1).Where(i => i != -1).ToList();
+			List<int> Offerings = JESPlayer.PlayerJES.Player.inventory.Select((x, i) => x.ModItem is Offering ? i : -1).Where(i => i != -1).ToList();
 			if (Offerings.Count <= 0) return false;
-			JESPlayer.UsedOfferings.Union(Offerings.Select(x => JESPlayer.Player.inventory[x]));
+			JESPlayer.PlayerJES.UsedOfferings.Union(Offerings.Select(x => JESPlayer.PlayerJES.Player.inventory[x]));
 
 			new SoundPlayer().Play(SoundID.Zombie53);
 			foreach (int Offering in Offerings)
-				JESPlayer.Player.inventory[Offering] = Main.item[JESPlayer.Player.QuickSpawnItem(new EntitySource_Misc("From Altar"), ItemID.Coal)];
+				JESPlayer.PlayerJES.Player.inventory[Offering] = Main.item[JESPlayer.PlayerJES.Player.QuickSpawnItem(new EntitySource_Misc("From Altar"), ItemID.Coal)];
 			return true;
         }
     }
