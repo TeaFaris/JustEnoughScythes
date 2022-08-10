@@ -17,6 +17,7 @@ namespace JustEnoughScythes.Systems
     public class JESPlayer : ModPlayer, IContainsSouls
     {
         protected uint _MaxSouls { get; set; } = 5;
+        public static JESPlayer PlayerJES => Main.LocalPlayer.GetModPlayer<JESPlayer>();
         public bool IsBlocking { get; set; } = false;
         public List<Item> UsedOfferings { get; set; }
         public uint MaxSouls

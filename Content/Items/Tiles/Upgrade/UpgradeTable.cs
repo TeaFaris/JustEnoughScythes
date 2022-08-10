@@ -35,7 +35,7 @@ namespace JustEnoughScythes.Content.Items.Tiles.Upgrade
 			TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
 			TileObjectData.addTile(Type);
 		}
-		public override void MouseOver(int i, int j) => Main.instance.MouseText("Upgrade");
+		public override void MouseOver(int i, int j) => ;
 		
 		public override bool RightClick(int i, int j)
 		{
