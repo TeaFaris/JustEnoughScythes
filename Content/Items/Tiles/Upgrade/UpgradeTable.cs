@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using JustEnoughScythes.Systems;
 
 namespace JustEnoughScythes.Content.Items.Tiles.Upgrade
 {
@@ -35,8 +36,13 @@ namespace JustEnoughScythes.Content.Items.Tiles.Upgrade
 			TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
 			TileObjectData.addTile(Type);
 		}
-		public override void MouseOver(int i, int j) => ;
-		
+		public override void MouseOver(int i, int j)
+        {
+			Player player = JESPlayer.PlayerJES.Player;
+			player.noThrow = 2;
+			player.cursorItemIconEnabled = true;
+			player.cursorItemIconID = ModContent.ItemType<Items.Tiles.Upgrade.UpgradeTable_Item>();
+        }
 		public override bool RightClick(int i, int j)
 		{
 
