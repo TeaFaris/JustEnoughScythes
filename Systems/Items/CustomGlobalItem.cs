@@ -1,5 +1,4 @@
-﻿using JustEnoughScythes.Systems.Melee;
-using JustEnoughScythes.Utils;
+﻿using JustEnoughScythes.Utils;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -27,13 +26,14 @@ namespace JustEnoughScythes.Systems.Items
                     .Case(DamageClass.Melee.Type, () => item.holdStyle = ItemHoldStyleID.HoldGuitar)
                     .Case(DamageClass.Magic.Type, () => item.holdStyle = ItemHoldStyleID.HoldFront)
                     .Case(DamageClass.MeleeNoSpeed.Type, () => item.holdStyle = ItemHoldStyleID.HoldFront)
-                    .Case(DamageClass.Ranged.Type, () => item.holdStyle = ItemHoldStyleID.HoldFront);
+                    .Case(DamageClass.Ranged.Type, () => item.holdStyle = ItemHoldStyleID.HoldFront)
+                    .Case(DamageClass.Summon.Type, () => item.holdStyle = ItemHoldStyleID.HoldGuitar);
                 IsChangedStyle = true;
             }
         }
         public override void HoldStyle(Item item, Player player, Rectangle heldItemFrame)
         {
-            if (item.handOnSlot < 0 && item.GetGlobalItem<GlobalMelee>().IsChangedStyle)
+            if (item.handOnSlot < 0 && item.GetGlobalItem<CustomGlobalItem>().IsChangedStyle)
             {
                 new Switch<int>(item.DamageType.Type)
                     .Case(DamageClass.Melee.Type, () =>
@@ -60,15 +60,9 @@ namespace JustEnoughScythes.Systems.Items
                             {
                                 player.itemLocation.Y = player.Center.Y + 10f;
                                 if (player.direction < 0)
-                                {
-                                    player.itemRotation = 0;
                                     player.itemLocation.X = player.Center.X - 4f;
-                                }
                                 if (player.direction > 0)
-                                {
-                                    player.itemRotation = 0;
                                     player.itemLocation.X = player.Center.X + 4f;
-                                }
                             })
                             .Case(new Vector2[] { new Vector2(24, 18), new Vector2(24, 28) }, () => // CosmoGun, HeatGun
                             {
@@ -87,7 +81,7 @@ namespace JustEnoughScythes.Systems.Items
                                     player.itemLocation.X = player.Center.X + 5.5f;
                             });
                         new Switch<int>(item.type)
-                            .Case(new int[] { ItemID.ZapinatorGray, ItemID.ZapinatorOrange, ItemID.BeeGun, ItemID.WaspGun, ItemID.RainbowGun, ItemID.BubbleGun, ItemID.AquaScepter }, () =>
+                            .Case(new int[] { ItemID.ZapinatorGray, ItemID.ZapinatorOrange, ItemID.BeeGun, ItemID.WaspGun, ItemID.RainbowGun, ItemID.BubbleGun, ItemID.AquaScepter, ItemID.LaserRifle }, () =>
                             {
                                 player.itemLocation.Y = player.Center.Y - 12f;
                                 if (player.direction < 0)
@@ -102,6 +96,14 @@ namespace JustEnoughScythes.Systems.Items
                                     player.itemLocation.X = player.Center.X - 12f;
                                 if (player.direction > 0)
                                     player.itemLocation.X = player.Center.X - 16f;
+                            })
+                            .Case(ItemID.NettleBurst, () =>
+                            {
+                                player.itemLocation.Y = player.Center.Y;
+                                if (player.direction < 0)
+                                    player.itemLocation.X = player.Center.X - 5.5f;
+                                if (player.direction > 0)
+                                    player.itemLocation.X = player.Center.X + 5.5f;
                             });
 
                     })
@@ -247,7 +249,7 @@ namespace JustEnoughScythes.Systems.Items
                                         if (player.direction > 0)
                                             player.itemLocation.X = player.Center.X + 4f;
                                     })
-                                    .Case(ItemID.PainterPaintballGun, () =>
+                                    .Case(new int[] { ItemID.PainterPaintballGun, ItemID.LaserRifle }, () =>
                                     {
                                         player.itemLocation.Y = player.Center.Y - 9f;
                                         if (player.direction < 0)
@@ -264,13 +266,21 @@ namespace JustEnoughScythes.Systems.Items
                                             player.itemLocation.X = player.Center.X - 24f;
                                     });
                             })
-                            .Case(AmmoID.CandyCorn, () =>
+                            .Case(AmmoID.JackOLantern, () =>
                             {
-                                player.itemLocation.Y = player.Center.Y - 20f;
+                                player.itemLocation.Y = player.Center.Y - 17f;
                                 if (player.direction < 0)
-                                    player.itemLocation.X = player.Center.X - 20f;
-                                if (player.direction > 0)
                                     player.itemLocation.X = player.Center.X - 22f;
+                                if (player.direction > 0)
+                                    player.itemLocation.X = player.Center.X - 26f;
+                            })
+                            .Case(AmmoID.Gel, () =>
+                            {
+                                player.itemLocation.Y = player.Center.Y - 10f;
+                                if (player.direction < 0)
+                                    player.itemLocation.X = player.Center.X - 27f;
+                                if (player.direction > 0)
+                                    player.itemLocation.X = player.Center.X - 31f;
                             })
                             .Default(() =>
                             {
@@ -280,6 +290,14 @@ namespace JustEnoughScythes.Systems.Items
                                 if (player.direction > 0)
                                     player.itemLocation.X = player.Center.X - 22f;
                             });
+                    })
+                    .Case(DamageClass.Summon.Type, () =>
+                    {
+                        player.itemLocation.Y = player.Center.Y + 12f;
+                        if (player.direction < 0)
+                            player.itemLocation.X = player.Center.X + 2f;
+                        if (player.direction > 0)
+                            player.itemLocation.X = player.Center.X - 2f;
                     });
             }
         }
