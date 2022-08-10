@@ -11,10 +11,22 @@
     <Optimize>False</Optimize>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Content\Items\Weapons\Magic\**" />
+    <Compile Remove="Content\Items\Weapons\Melee\**" />
+    <Compile Remove="Content\Items\Weapons\Ranged\**" />
+    <Compile Remove="Content\Items\Weapons\Summon\**" />
     <Compile Remove="Content\Items\Новая папка\**" />
     <Compile Remove="Content\Новая папка\**" />
+    <EmbeddedResource Remove="Content\Items\Weapons\Magic\**" />
+    <EmbeddedResource Remove="Content\Items\Weapons\Melee\**" />
+    <EmbeddedResource Remove="Content\Items\Weapons\Ranged\**" />
+    <EmbeddedResource Remove="Content\Items\Weapons\Summon\**" />
     <EmbeddedResource Remove="Content\Items\Новая папка\**" />
     <EmbeddedResource Remove="Content\Новая папка\**" />
+    <None Remove="Content\Items\Weapons\Magic\**" />
+    <None Remove="Content\Items\Weapons\Melee\**" />
+    <None Remove="Content\Items\Weapons\Ranged\**" />
+    <None Remove="Content\Items\Weapons\Summon\**" />
     <None Remove="Content\Items\Новая папка\**" />
     <None Remove="Content\Новая папка\**" />
   </ItemGroup>
@@ -26,11 +38,5 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Items\Weapons\Melee\" />
-    <Folder Include="Content\Items\Weapons\Ranged\" />
-    <Folder Include="Content\Items\Weapons\Magic\" />
-    <Folder Include="Content\Items\Weapons\Summon\" />
   </ItemGroup>
 </Project>
