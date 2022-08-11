@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿using Terraria.ID;
 
 namespace JustEnoughScythes.Content.Items.RangedModificators.Scopes.StandardScope
 {
@@ -17,10 +15,6 @@ namespace JustEnoughScythes.Content.Items.RangedModificators.Scopes.StandardScop
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Standard scope");
-        }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            base.ModifyTooltips(tooltips);
         }
     }
 }

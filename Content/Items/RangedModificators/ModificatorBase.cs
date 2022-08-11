@@ -22,12 +22,8 @@ namespace JustEnoughScythes.Content.Items.RangedModificators
             void newLine(string Name, float Value)
             {
                 TooltipLine Line = new TooltipLine(Mod, Name, $"{Name}: {Value}");
-                if (Value > 0.0f) { Line.IsModifier = true; }
-                else if (Value < 0.0f) 
-                {
-                    Line.IsModifier = true;
-                    Line.IsModifierBad = true;
-                }
+                Line.IsModifier = Value != 0;
+                Line.IsModifierBad = Value < 0;
                 tooltips.Add(Line);
             }
             string[] names = { "Damage", "Accuracy", "Crit multiplier", "Shoot speed" };
