@@ -11,11 +11,8 @@
     <Optimize>False</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Content\Items\Новая папка\**" />
     <Compile Remove="Content\Новая папка\**" />
-    <EmbeddedResource Remove="Content\Items\Новая папка\**" />
     <EmbeddedResource Remove="Content\Новая папка\**" />
-    <None Remove="Content\Items\Новая папка\**" />
     <None Remove="Content\Новая папка\**" />
   </ItemGroup>
   <ItemGroup>
