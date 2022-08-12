@@ -26,9 +26,10 @@ namespace JustEnoughScythes.Content.Items.RangedModificators
                 Line.IsModifierBad = Value < 0;
                 tooltips.Add(Line);
             }
-            string[] names = { "Damage", "Accuracy", "Crit multiplier", "Shoot speed" };
-            float[] values = { Damage, Accuracy, CritMultiplier, ShootSpeed };
-            for (int i = 0; i!=4; i++) { newLine(names[i], values[i]); }
+            foreach (int i = 0; i!=4; i++)
+            {
+                newLine(nameof as horosho smotri shas shas, values[i]);
+            }
         }
         public override void SetDefaults()
         {

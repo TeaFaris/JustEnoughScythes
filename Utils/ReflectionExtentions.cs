@@ -10,5 +10,6 @@ namespace JustEnoughScythes.Content.Utils
             FieldInfo[] AllFields = typeof(T).GetFields();
             return AllFields.Where(x => x.IsInitOnly).ToArray();
         }
+        public static FieldInfo[] GetPublicFields<T>() => typeof(T).GetFields(BindingFlags.Public).ToArray();
     }
 }
