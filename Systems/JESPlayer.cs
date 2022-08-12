@@ -43,6 +43,7 @@ namespace JustEnoughScythes.Systems
             }
             SoulsContainer.Reset();
         }
+        public override void PreUpdate() => IsBlocking = Player.HeldItem.DamageType == DamageClass.Melee && Main.mouseRight;
         public override void ModifyDrawInfo(ref PlayerDrawSet drawInfo)
         {
             if (IsBlocking)

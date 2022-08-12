@@ -1,9 +1,11 @@
 ﻿using JustEnoughScythes.Systems.Items;
-using JustEnoughScythes.Utils;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
+using Terraria.DataStructures;
+using Terraria.GameContent;
 using Terraria.ModLoader;
+using Terraria.ID;
 
 namespace JustEnoughScythes.Systems.Melee
 {
@@ -11,35 +13,28 @@ namespace JustEnoughScythes.Systems.Melee
     {
         private int StandardDamage { get; set; }
         private float StandardKnockback { get; set; }
-        public override void HoldItem(Item item, Player player)
+        public override bool AltFunctionUse(Item item, Player player) => true;
+        public override bool CanUseItem(Item item, Player player)
         {
-            JESPlayer JESPlayer = player.GetModPlayer<JESPlayer>();
-            JESPlayer.IsBlocking = item.DamageType.Type == DamageClass.Melee.Type && Main.mouseRight;
-            if (JESPlayer.IsBlocking)
+            if (player.GetModPlayer<JESPlayer>().IsBlocking)//Sets what happens on right click(special ability)
             {
-                //Projectile.NewProjectile(new EntitySource_ItemUse(player, item), player.position, Vector2.Zero, ModContent.ProjectileType<BlockProjectile>(), 0, 0, player.whoAmI);
-
+                item.noUseGraphic = true;
+                item.useStyle = ItemUseStyleID.None;
+                item.shoot = ModContent.ProjectileType<BlockProjectile>();
+                item.shootSpeed = 10;
             }
-        }
-        public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
-        {
-            if (player.GetModPlayer<JESPlayer>().IsBlocking)
-            {
-                hitbox = new Rectangle((int)player.position.X + 16, (int)player.position.Y - 4, 16, hitbox.Height);
-            }
+            player.HeldItem.SetDefaults(player.HeldItem.type);
+            return true;
         }
     }
     public class BlockProjectile : ModProjectile
     {
-        public override void SetStaticDefaults() => Main.projFrames[Projectile.type] = 1;
+        public override string Texture => $"Terraria/Images/Item_{Main.player[Projectile.owner].HeldItem.type}";
         public override void SetDefaults()
         {
-            Projectile.aiStyle = ProjAIStyleID.HeldProjectile;
-            Projectile.friendly = true;
-            Projectile.hide = true;
-            Projectile.ownerHitCheck = true;
+            Projectile.width = TextureAssets.Item[Main.player[Projectile.owner].HeldItem.type].Value.Width;
+            Projectile.height = TextureAssets.Item[Main.player[Projectile.owner].HeldItem.type].Value.Height;
+            Projectile.aiStyle = 20;
         }
-        public override bool PreDraw(ref Color lightColor) => false;
-        public override void AI() { }
     }
 }
