@@ -1,4 +1,5 @@
-﻿using JustEnoughScythes.Utils;
+﻿using JustEnoughScythes.Systems.Configs;
+using JustEnoughScythes.Utils;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -20,8 +21,7 @@ namespace JustEnoughScythes.Systems.Items
         public override void SetDefaults(Item item)
         {
             base.SetDefaults(item);
-            if (item.holdStyle == ItemHoldStyleID.None)
-            {
+            if (item.holdStyle == ItemHoldStyleID.None && ModContent.GetInstance<Config>().EnableItemsInHand)
                 new Switch<int>(item.DamageType.Type)
                     .Case(DamageClass.Melee.Type, () => item.holdStyle = ItemHoldStyleID.HoldGuitar)
                     .Case(DamageClass.Magic.Type, () => item.holdStyle = ItemHoldStyleID.HoldFront)
@@ -29,12 +29,10 @@ namespace JustEnoughScythes.Systems.Items
                     .Case(DamageClass.Ranged.Type, () => item.holdStyle = ItemHoldStyleID.HoldFront)
                     .Case(DamageClass.Summon.Type, () => item.holdStyle = ItemHoldStyleID.HoldGuitar);
                 IsChangedStyle = true;
-            }
         }
         public override void HoldStyle(Item item, Player player, Rectangle heldItemFrame)
         {
-            if (item.handOnSlot < 0 && item.GetGlobalItem<CustomGlobalItem>().IsChangedStyle)
-            {
+            if (item.handOnSlot < 0 && item.GetGlobalItem<CustomGlobalItem>().IsChangedStyle && ModContent.GetInstance<Config>().EnableItemsInHand)
                 new Switch<int>(item.DamageType.Type)
                     .Case(DamageClass.Melee.Type, () =>
                     {
@@ -299,7 +297,8 @@ namespace JustEnoughScythes.Systems.Items
                         if (player.direction > 0)
                             player.itemLocation.X = player.Center.X - 2f;
                     });
-            }
+            else if (item.GetGlobalItem<CustomGlobalItem>().IsChangedStyle)
+                item.holdStyle = ItemHoldStyleID.None;
         }
     }
 }
