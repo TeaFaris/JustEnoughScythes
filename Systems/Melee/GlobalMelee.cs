@@ -1,40 +1,50 @@
 ﻿using JustEnoughScythes.Systems.Items;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.GameContent;
 using Terraria.ModLoader;
 using Terraria.ID;
+using JustEnoughScythes.Utils.IDs;
+using Microsoft.Xna.Framework;
 
 namespace JustEnoughScythes.Systems.Melee
 {
     public class GlobalMelee : CustomGlobalItem
     {
-        private int StandardDamage { get; set; }
-        private float StandardKnockback { get; set; }
         public override bool AltFunctionUse(Item item, Player player) => true;
         public override bool CanUseItem(Item item, Player player)
         {
             if (player.GetModPlayer<JESPlayer>().IsBlocking)//Sets what happens on right click(special ability)
-            {
-                item.noUseGraphic = true;
-                item.useStyle = ItemUseStyleID.None;
-                item.shoot = ModContent.ProjectileType<BlockProjectile>();
-                item.shootSpeed = 10;
-            }
-            player.HeldItem.SetDefaults(player.HeldItem.type);
+                item.shoot = JESProjectileID.BlockProjectile;
+
             return true;
+        }
+        public override bool? UseItem(Item item, Player player)
+        {
+            item.SetDefaults(item.type);
+            return true;
+        }
+        public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
+        {
+            if (player.GetModPlayer<JESPlayer>().IsBlocking)
+                hitbox = Rectangle.Empty;
         }
     }
     public class BlockProjectile : ModProjectile
     {
-        public override string Texture => $"Terraria/Images/Item_{Main.player[Projectile.owner].HeldItem.type}";
+        public override string Texture => $"Terraria/Images/Item_{ItemID.FromNetId((short)Main.player[Projectile.owner].HeldItem.netID)}";
         public override void SetDefaults()
         {
-            Projectile.width = TextureAssets.Item[Main.player[Projectile.owner].HeldItem.type].Value.Width;
-            Projectile.height = TextureAssets.Item[Main.player[Projectile.owner].HeldItem.type].Value.Height;
-            Projectile.aiStyle = 20;
+            Projectile.width = 48;
+            Projectile.height = 48;
+            Projectile.aiStyle = ProjAIStyleID.Drill;
+            Projectile.DamageType = DamageClass.Melee;
+            Projectile.damage = 1000;
+            Projectile.tileCollide = false;
+            Projectile.ignoreWater = true;
+        }
+        public override void AI()
+        {
+            if (!Main.player[Projectile.owner].GetModPlayer<JESPlayer>().IsBlocking)
+                Projectile.Kill();
         }
     }
 }
